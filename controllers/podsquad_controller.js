@@ -29,21 +29,21 @@ router.post('/', (req, res) => {
 router.get('/seed', (req, res) => {
     Pod.create([
         {
-            name: "The Seiders Family",
+            name: "The Spiders Family",
             familyCount: 3,
             state: "Massachusetts",
             photoURL: "",
             riskAdverseScore: 25,
         },
         {
-            name: "The Migliorelli Family",
+            name: "The Migli Family",
             familyCount: 4,
             state: "Massachusetts",
             photoURL: "",
             riskAdverseScore: 18,
         },
         {
-            name: "The Zembower Family",
+            name: "The Zemz Family",
             familyCount: 4,
             state: "New York",
             photoURL: "",
