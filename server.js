@@ -24,7 +24,7 @@ app.use(methodOverride('_method'));
 
 
 const podsController = require('./controllers/podsquad_controller.js')
-app.use('/pods', podsController)
+app.use('/podsquad', podsController)
 
 
 
