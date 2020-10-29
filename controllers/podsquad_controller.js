@@ -4,13 +4,14 @@ const Pod = require('../models/pods.js')
 
 
 //index 
-// router.get('/', (req, res) => {
-//     Pog.find({}, (error, allPods) => {
-//         res.render('index.ejs', {
-//             pods: allPods
-//         })
-//     })       
-// })
+router.get('/', (req, res) => {
+    res.render('index.ejs')
+    // Pod.find({}, (error, allPods) => {
+    //     res.render('index.ejs', {
+    //         pods: allPods
+    //     })
+    // })       
+})
 
 //new
 router.get('/new', (req, res) => {
@@ -48,13 +49,14 @@ router.post('/', (req, res) => {
 
 
 // show
-// router.get('/:id', (req, res) => {
-//     Pod.findById(req.params.id, (err, foundPod) => {
-//         res.render('show.ejs', {
-//             pod: foundPod
-//         })
-//     })
-// })  
+router.get('/:id', (req, res) => {
+    res.render('show.ejs')
+    // Pod.findById(req.params.id, (err, foundPod) => {
+    //     res.render('show.ejs', {
+    //         pod: foundPod
+    //     })
+    // })
+})  
 
 //delete
 // router.delete('/:id', (req, res) => {
@@ -64,13 +66,14 @@ router.post('/', (req, res) => {
 // })
 
 //edit
-// router.get('/:id/edit', (req, res) => {
-//     Pod.findById(req.params.id, (err, foundPod) => {
-//         res.render('edit.ejs', {
-//             pod: foundPod
-//         })
-//     })
-// })
+router.get('/:id/edit', (req, res) => {
+  res.render('edit.ejs')
+    // Pod.findById(req.params.id, (err, foundPod) => {
+    //     res.render('edit.ejs', {
+    //         pod: foundPod
+    //     })
+    // })
+})
 
 //put
 // router.put('/:id', (req, res) => {
