@@ -5,6 +5,7 @@ const Pod = require('../models/pods.js')
 
 //index 
 router.get('/', (req, res) => {
+    console.log('hit pod route')
     Pod.find({}, (error, allPods) => {
         res.render('index.ejs', {
             pods: allPods
