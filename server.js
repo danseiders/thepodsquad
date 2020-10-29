@@ -2,11 +2,13 @@ const express = require('express');
 const app = express();
 const mongoose = require ('mongoose');
 const db = mongoose.connection;
-const PORT = process.env.PORT || 3000;
+require('dotenv').config()
 const methodOverride  = require('method-override');
 
+
+const PORT = process.env.PORT
 //DATABASE
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ 'podSquad';
+const MONGODB_URI = process.env.MONGODB_URI
 
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false} );
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
