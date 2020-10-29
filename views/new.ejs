@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PodSquad</title>
+</head>
+<body>
+    <h1>This is the NEW ENTRY page</h1>
+    <form action="/logs" method="POST">
+        <label name='title'>Title:</label>
+        <input type="text" name="title" id="title">
+        <label name='entry'>Entry:</label>
+        <input type="textarea" name="entry" id="entry">
+        <label name='shipIsBroken'>Broken Ship:</label>
+        <input type="checkbox" name="shipIsBroken" id="shipIsBroken">
+        <input type="submit" value="Submit Log">
+    </form>
+    <a href="/logs">go back to logs</a>
+</body>
+</html>
