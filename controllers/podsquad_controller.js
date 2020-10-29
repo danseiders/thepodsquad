@@ -5,12 +5,11 @@ const Pod = require('../models/pods.js')
 
 //index 
 router.get('/', (req, res) => {
-    res.render('index.ejs')
-    // Pod.find({}, (error, allPods) => {
-    //     res.render('index.ejs', {
-    //         pods: allPods
-    //     })
-    // })       
+    Pod.find({}, (error, allPods) => {
+        res.render('index.ejs', {
+            pods: allPods
+        })
+    })       
 })
 
 //new
@@ -27,65 +26,69 @@ router.post('/', (req, res) => {
 })
 
 // //seed
-// router.get('/seed', (req, res) => {
-//     Pod.create([
-//         {
-//             title: 'another day',
-//             entry: 'al;dsjf adslkfjadfs al;fjkadsl;fads asdf;ljkdasf;jlkf adsfl;jkadfs; asdfl;jkadfs;ljfadsj asdfljdam,.n,zl;akjadjsf0io',
-//             shipIsBroken: false
-//         },
-//         {
-//             title: 'broken ship',
-//             entry: 'aasdfj9040034ht8h2gjnwasjlkasdjk vvlkdsfab asdklhjafds adfklj io',
-//             shipIsBroken: true
-//         },
-//         {
-//             title: 'the end',
-//             entry: 'nxcvn,.cvxzn,.cvxjkl;adsjkldafsjl09w098 7032478243hiadfsbklmncvbm,cvxzb',
-//             shipIsBroken: false
-//         }
-//     ])
-// })
+router.get('/seed', (req, res) => {
+    Pod.create([
+        {
+            name: "The Seiders Family",
+            familyCount: 3,
+            state: "Massachusetts",
+            photoURL: "",
+            riskAdverseScore: 25,
+        },
+        {
+            name: "The Migliorelli Family",
+            familyCount: 4,
+            state: "Massachusetts",
+            photoURL: "",
+            riskAdverseScore: 18,
+        },
+        {
+            name: "The Zembower Family",
+            familyCount: 4,
+            state: "New York",
+            photoURL: "",
+            riskAdverseScore: 22,
+        }
+    ])
+})
 
 
 // show
 router.get('/:id', (req, res) => {
-    res.render('show.ejs')
-    // Pod.findById(req.params.id, (err, foundPod) => {
-    //     res.render('show.ejs', {
-    //         pod: foundPod
-    //     })
-    // })
+    Pod.findById(req.params.id, (err, foundPod) => {
+        res.render('show.ejs', {
+            pod: foundPod
+        })
+    })
 })  
 
 //delete
-// router.delete('/:id', (req, res) => {
-//     Pod.findByIdAndDelete(req.params.id, () => {
-//         res.redirect('/pods')
-//     })
-// })
+router.delete('/:id', (req, res) => {
+    Pod.findByIdAndDelete(req.params.id, () => {
+        res.redirect('/pods')
+    })
+})
 
 //edit
 router.get('/:id/edit', (req, res) => {
-  res.render('edit.ejs')
-    // Pod.findById(req.params.id, (err, foundPod) => {
-    //     res.render('edit.ejs', {
-    //         pod: foundPod
-    //     })
-    // })
+    Pod.findById(req.params.id, (err, foundPod) => {
+        res.render('edit.ejs', {
+            pod: foundPod
+        })
+    })
 })
 
 //put
-// router.put('/:id', (req, res) => {
-//     console.log(req.params.id)
-//     console.log(req.body)
-//     Pod.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPod) => {
-//         if(err){
-//             console.log(err)
-//         }
-//         res.redirect('/pods')
-//     })
-// })
+router.put('/:id', (req, res) => {
+    console.log(req.params.id)
+    console.log(req.body)
+    Pod.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPod) => {
+        if(err){
+            console.log(err)
+        }
+        res.redirect('/pods')
+    })
+})
 
 
 module.exports = router
