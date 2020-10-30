@@ -1,28 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+
+
 :root {
-  --darkblue: #084B83;  
-  --darkgreen: #125768;
-  --lightblue: #2361b1;
-  --lightgreen: #BBE6E4;
-  --white: #F0F6F6;
-  --pink: #FF66B3;
+    --darkblue: #084B83;  
+    --darkgreen: #125768;
+    --lightblue: #2361b1;
+    --lightgreen: #BBE6E4;
+    --white: rgba(240, 246, 246, 1);
+    --pink: #FF66B3;
 }
+
+
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--darkblue);
-    color: white;
+    color: var(--white);
     background-image: url('/images/holding_hands.jpg');
     height: 800px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% ;
 }
 nav {
     background-color: var(--lightblue);
-    width: 100%;
-
 }
 
 .nav_container {
@@ -35,22 +39,91 @@ nav {
 .nav {
     color: var(--white)
 }
+.login_intro {
+    width: 400px;
+    height: 300px;
+    border-radius: 25px;
+    color: darkblue;
+    text-align: center;
+    background-color: rgba(240, 246, 246, 0.678)
+}
+
 .main {
-    flex-grow: 2;
+    flex-grow: 1;
+}
+
+.main_logo {
+    font-size: 60px;
+    padding: 10px;
+    text-decoration: none;
+    text-shadow: 5px 5px var(--darkblue);
+}
+a:hover{
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+    color: var(--white)
+}
+.main_logo {
+    font-size: 60px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.login_container {
+    padding: 10px 20px;
 }
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
-
+    font-family: 'Comfortaa', cursive;   
     
 }
 
 footer {
     text-align: center;
+    margin: 30px;
+    font-family: 'Comfortaa', cursive;
+    background-color: var(--lightblue);
 }
 
 .footer_link {
     margin: 30px;
+    color: white;
+}
+
+#signup_link {
+    color: var(--pink)
+}
+
+.intro_container {
+    display: flex;
+    justify-content: center;
+}
+
+h4 {
+    color: white;
+    font-size: 30px;
+    background-color: var(--darkblue);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.logo_sm {
+    padding: 5px;
+    font-family: 'Comfortaa', cursive;   
+    color: var(--white);
+    text-shadow: 2px 2px var(--darkblue);
+}
+.logo_md {
+    padding: 5px;
+    font-family: 'Comfortaa', cursive;   
+    color: var(--white);
+    text-shadow: 2px 2px var(--pink);
 }

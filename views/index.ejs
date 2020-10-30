@@ -3,16 +3,21 @@
 <head>
    <%- include('./partials/head.ejs') %>
 </head>
-<body class="container-xl">
+<body >
     <header>
         <%- include('./partials/header.ejs') %>
     </header>
-    <nav>
-        <%- include('./partials/nav.ejs') %>
-    </nav>
-    <div class="main container">
-        
+    <div class="container-md intro_container">
+        <div class="login_intro">
+            <h4>Welcome to <span class="logo_md">PODSquad</span>!</h4>
+            <p>With <span class="logo_sm">PODSquad</span> you can connect with local people or familes that follow similar COVID-19 protocols. <br><br> Sign up or Log in to get started!</p>
+            <a href='/newuser' id="signup_link">Sign Up!</a>
+            <form >
+                <input type="submit" name="Sign Up">
+            </form>
+        </div>
     </div>
+
     <footer>
         <%- include ('./partials/footer.ejs') %>
     </footer>
