@@ -1,3 +1,35 @@
+:root {
+  --darkblue: #084B83;  
+  --darkgreen: #125768;
+  --lightgreen: #BBE6E4;
+  --white: #F0F6F6;
+  --pink: #FF66B3;
+}
+
+body {
+    background-color: var(--darkblue);
+    color: white;
+}
+nav {
+    background-color: var(--darkgreen);
+
+}
+.nav_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 300px;
+    text-align: center;
+}
 .nav {
+    color: var(--pink)
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
     
 }
