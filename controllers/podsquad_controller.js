@@ -5,7 +5,7 @@ const Pod = require('../models/pods.js')
 
 //index 
 router.get('/', (req, res) => {
-    console.log('hit pod route')
+    console.log('hit index')
     Pod.find({}, (error, allPods) => {
         res.render('index.ejs', {
             pods: allPods
@@ -22,12 +22,13 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
     console.log(req.params)
     Pod.create(req.body, (error, createdPod) => {
-        res.redirect('/pods')
+        res.redirect('/')
     })
 })
 
 // //seed
 router.get('/seed', (req, res) => {
+    console.log('hit seed')
     Pod.create([
         {
             name: "The Spiders Family",
@@ -51,6 +52,7 @@ router.get('/seed', (req, res) => {
             riskAdverseScore: 22,
         }
     ])
+    res.redirect('/')
 })
 
 

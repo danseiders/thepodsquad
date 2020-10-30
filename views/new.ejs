@@ -4,6 +4,12 @@
    <%- include('./partials/head.ejs') %>
 </head>
 <body>
+    <header>
+        <%- include('./partials/header.ejs') %>
+    </header>
+    <nav>
+        <%- include('./partials/nav.ejs') %>
+    </nav>
     <h1>This is the NEW ENTRY page</h1>
     <form action="/logs" method="POST">
         <label name='title'>Title:</label>
@@ -15,5 +21,8 @@
         <input type="submit" value="Submit Log">
     </form>
     <a href="/pods">go back to pods in your area</a>
+    <footer>
+        <%- include ('./partials/footer.ejs') %>
+    </footer>
 </body>
 </html>
