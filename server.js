@@ -8,7 +8,7 @@ const methodOverride  = require('method-override');
 
 const PORT = process.env.PORT
 //DATABASE
-const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = "process.env.MONGODB_URI"
 
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false} );
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
