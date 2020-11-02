@@ -13,7 +13,7 @@
 
 
 
-body {
+.index-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,6 +25,21 @@ body {
     background-repeat: no-repeat;
     background-size: 100% ;
 }
+
+.new-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--darkblue);
+    color: var(--white);
+    
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% ;
+}
+
+
 nav {
     background-color: var(--lightblue);
 }
@@ -126,4 +141,9 @@ p {
     font-family: 'Comfortaa', cursive;   
     color: var(--white);
     text-shadow: 2px 2px var(--pink);
+}
+
+.image_with_form {
+    width: 50%;
+ 
 }

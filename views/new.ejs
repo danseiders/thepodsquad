@@ -3,23 +3,53 @@
 <head>
    <%- include('./partials/head.ejs') %>
 </head>
-<body>
+<body class="new-body">
     <header>
         <%- include('./partials/header.ejs') %>
+        <nav>
+            <%- include('./partials/nav.ejs') %>
+        </nav>
     </header>
-    <nav>
-        <%- include('./partials/nav.ejs') %>
-    </nav>
-    <h1>This is the NEW ENTRY page</h1>
-    <form action="/logs" method="POST">
-        <label name='title'>Title:</label>
-        <input type="text" name="title" id="title">
-        <label name='entry'>Entry:</label>
-        <input type="textarea" name="entry" id="entry">
-        <label name='shipIsBroken'>Broken Ship:</label>
-        <input type="checkbox" name="shipIsBroken" id="shipIsBroken">
-        <input type="submit" value="Submit Log">
-    </form>
+    <div class="container-md" >
+        <h1>Add a new POD</h1>
+        <div class="form-container">   
+            <form action="/" method="POST">
+                <div class="form-group">
+                    <label name='familyName'>Family Name:</label>
+                    <input type="text" class="form-control" name="familyName" id="family-name">
+                </div>
+                <div class="form-group">
+                    <label name='familyCount'>Household Members:</label>
+                    <input type="number" class="form-control" name="familyCount" id="familyCount">
+                </div>
+                <div class="form-group">
+                    <label name='location'>State:</label>
+                    <input type="text" class="form-control" name="location" id="location">
+                </div>
+                <div class="form-group">
+                    <label name='photoURL'>Photo URL:</label>
+                    <input type="text" class="form-control" name="photoURL" id="photoURL">
+                </div>
+                <div class="form-group">
+                    <label name="maskwearing">Mask wearing:</label>
+                    <input type="range" min="1" max="5" value="3" class="form-control" name="maskwearing" id="maskwearing">
+                </div>
+                <div class="form-group">
+                    <label name="diningOut">Dining Out:</label>
+                    <input type="range" min="1" max="5" value="3" class="form-control" name="diningOut" id="diningOut">
+                </div>
+                <div class="form-group">
+                    <label name="socialDistancing">Social Distancing:</label>
+                    <input type="range" min="1" max="5" value="3" class="form-control" name="socialDistancing" id="socialDistancing">
+                </div>
+                <input type="submit" value="Add POD">
+            </form>
+        </div>
+        <div>
+            <img class="image_with_form" src="./images/baby_on_slide.jpg">
+            
+        </div>
+    </div>
     <footer>
         <%- include ('./partials/footer.ejs') %>
     </footer>

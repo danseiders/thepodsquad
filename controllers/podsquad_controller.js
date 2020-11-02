@@ -31,25 +31,34 @@ router.get('/seed', (req, res) => {
     console.log('hit seed')
     Pod.create([
         {
-            name: "The Spiders Family",
+            familyName: "The Spiders Family",
             familyCount: 3,
-            state: "Massachusetts",
+            location: "Massachusetts",
             photoURL: "",
-            riskAdverseScore: 25,
+            maskwearing: 5,
+            diningOut: 1,
+            socialDistancing: 5,
+            riskScore: 11,
         },
         {
-            name: "The Migli Family",
+            familyName: "The Migli Family",
             familyCount: 4,
-            state: "Massachusetts",
+            location: "Massachusetts",
             photoURL: "",
-            riskAdverseScore: 18,
+            maskwearing: 5,
+            diningOut: 1,
+            socialDistancing: 1,
+            riskScore: 7,
         },
         {
-            name: "The Zemz Family",
+            familyName: "The Zemz Family",
             familyCount: 4,
-            state: "New York",
+            location: "New York",
             photoURL: "",
-            riskAdverseScore: 22,
+            maskwearing: 1,
+            diningOut: 1,
+            socialDistancing: 1,
+            riskScore: 3,
         }
     ])
     res.redirect('/')
