@@ -10,9 +10,10 @@
             <%- include('./partials/nav.ejs') %>
         </nav>
     </header>
-    <div class="container-md" >
-        <h1>Add a new POD</h1>
-        <div class="form-container">   
+    <h1 class="page-title">Add a new POD</h1>
+    <div class="container-xl new-pod-page">
+        <div class="container-md" >
+        <div class="form-container"> 
             <form action="/" method="POST">
                 <div class="form-group">
                     <label name='familyName'>Family Name:</label>
@@ -42,16 +43,15 @@
                     <label name="socialDistancing">Social Distancing:</label>
                     <input type="range" min="1" max="5" value="3" class="form-control" name="socialDistancing" id="socialDistancing">
                 </div>
-                <input type="submit" value="Add POD">
+                <input type="submit" class="btn btn-primary" value="Add POD">
             </form>
         </div>
-        <div>
-            <img class="image_with_form" src="./images/baby_on_slide.jpg">
-            
-        </div>
     </div>
-    <footer>
-        <%- include ('./partials/footer.ejs') %>
-    </footer>
+                <img class="image_with_form" src="./images/baby_on_slide.jpg">
+        
+</div>
+<footer>
+    <%- include ('./partials/footer.ejs') %>
+</footer>
 </body>
 </html>

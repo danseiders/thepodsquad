@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 
-
-
 :root {
     --darkblue: #084B83;  
     --darkgreen: #125768;
@@ -11,113 +9,7 @@
     --pink: #FF66B3;
 }
 
-
-
-.index-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--darkblue);
-    color: var(--white);
-    background-image: url('/images/holding_hands.jpg');
-    height: 800px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% ;
-}
-
-.new-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--darkblue);
-    color: var(--white);
-    
-    height: 800px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% ;
-}
-
-
-nav {
-    background-color: var(--lightblue);
-}
-
-.nav_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 300px;
-    text-align: center;
-}
-.nav {
-    color: var(--white)
-}
-.login_intro {
-    width: 400px;
-    height: 300px;
-    border-radius: 25px;
-    color: darkblue;
-    text-align: center;
-    background-color: rgba(240, 246, 246, 0.678)
-}
-
-.main {
-    flex-grow: 1;
-}
-
-.main_logo {
-    font-size: 60px;
-    padding: 10px;
-    text-decoration: none;
-    text-shadow: 5px 5px var(--darkblue);
-}
-a:hover{
-    text-decoration: none;
-}
-a:visited {
-    text-decoration: none;
-    color: var(--white)
-}
-.main_logo {
-    font-size: 60px;
-    padding: 10px;
-    text-decoration: none;
-}
-
-.login_container {
-    padding: 10px 20px;
-}
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-family: 'Comfortaa', cursive;   
-    
-}
-
-footer {
-    text-align: center;
-    margin: 30px;
-    font-family: 'Comfortaa', cursive;
-    background-color: var(--lightblue);
-}
-
-.footer_link {
-    margin: 30px;
-    color: white;
-}
-
-#signup_link {
-    color: var(--pink)
-}
-
-.intro_container {
-    display: flex;
-    justify-content: center;
-}
-
+/******** WHOLE PAGE ********/
 h4 {
     color: white;
     font-size: 30px;
@@ -130,6 +22,103 @@ p {
     font-size: 20px;
 }
 
+.page-title {
+    text-align: center;
+}
+
+a:hover{
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+    color: var(--white)
+}
+
+
+/******** HEADER AND NAV ********/
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Comfortaa', cursive;   
+    
+}
+
+nav {
+    background-color: var(--lightblue);
+}
+
+.nav_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 300px;
+    text-align: center;
+}
+
+.nav {
+    color: var(--white)
+}
+
+.main_logo {
+    font-size: 60px;
+    padding: 10px;
+    text-decoration: none;
+    text-shadow: 5px 5px var(--darkblue);
+}
+
+/******** INDEX PAGE ********/
+.index-main, .pod-family{
+    border: 1px solid orange;
+}
+
+
+/******** NEW PAGE ********/
+.new-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--darkblue);
+    color: var(--white);
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% ;
+}
+.new-pod-page {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.image_with_form {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/******** SHOW PAGE ********/
+.pod-image {
+    height: 200px;
+    width: auto;
+}
+
+
+
+/******** FOOTER ********/
+footer {
+    text-align: center;
+    margin: 30px;
+    font-family: 'Comfortaa', cursive;
+    background-color: var(--lightblue);
+}
+
+.footer_link {
+    margin: 30px;
+    color: white;
+}
+
+/******** LOGO STYLES ********/
 .logo_sm {
     padding: 5px;
     font-family: 'Comfortaa', cursive;   
@@ -143,7 +132,38 @@ p {
     text-shadow: 2px 2px var(--pink);
 }
 
-.image_with_form {
-    width: 50%;
- 
+/******** SESSION OR USER VIEW??? ********/
+.intro-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--darkblue);
+    color: var(--white);
+    background-image: url('/images/holding_hands.jpg');
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% ;
+}
+
+.login_intro {
+    width: 350px;
+    height: 500px;
+    border-radius: 25px;
+    color: darkblue;
+    text-align: center;
+    background-color: rgba(240, 246, 246, 0.678)
+}
+
+.login_container {
+    padding: 10px 20px;
+}
+
+#signup_link {
+    color: var(--pink)
+}
+
+.intro_container {
+    display: flex;
+    justify-content: center;
 }

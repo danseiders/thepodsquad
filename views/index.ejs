@@ -6,17 +6,20 @@
 <body class='index-body'>
     <header>
         <%- include('./partials/header.ejs') %>
+        <nav>
+            <%- include('./partials/nav.ejs') %>
+        </nav>
     </header>
-    <div class="container-md intro_container">
-        <div class="login_intro">
-            <h4>Welcome to <span class="logo_md">PODSquad</span>!</h4>
-            <p>With <span class="logo_sm">PODSquad</span> you can connect with local people or familes that follow similar COVID-19 protocols. <br><br> Sign up or Log in to get started!</p>
-            <a href='/newuser' id="signup_link">Sign Up!</a>
-            <form >
-                <input type="submit" name="Sign Up">
-            </form>
-        </div>
-    </div>
+    <h1>Pods in your area!</h1>
+    <div class="container-md index-main">
+    <% for(let pod of pods) { %>
+        <div class="pod-family">
+            <img class="pod-image" src="<%= pod.photoURL %>">
+            <h2><%= pod.familyName %></h2>
+            <h3><%= pod.familyCount %></h3> 
+            <p><%= pod.location %></p> 
+        </div> 
+    <% } %> 
 
     <footer>
         <%- include ('./partials/footer.ejs') %>
