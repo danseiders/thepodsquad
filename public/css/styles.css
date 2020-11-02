@@ -10,6 +10,9 @@
 }
 
 /******** WHOLE PAGE ********/
+h2 {
+    color: white;
+}
 h4 {
     color: white;
     font-size: 30px;
@@ -68,8 +71,27 @@ nav {
 }
 
 /******** INDEX PAGE ********/
-.index-main, .pod-family{
-    border: 1px solid orange;
+.index-body{
+    background-color: var(--darkblue);
+    text-align: center;
+}
+.index-main{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.pod-family-container {
+    text-align: center;
+    background-color: var(--lightblue);
+    border-radius: 50px;
+    color: white;
+    margin: 10px;
+}
+.index-pod-image {
+    height: auto;
+    width: 300px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
 
@@ -98,10 +120,7 @@ nav {
 }
 
 /******** SHOW PAGE ********/
-.pod-image {
-    height: 200px;
-    width: auto;
-}
+
 
 
 

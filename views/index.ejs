@@ -10,17 +10,17 @@
             <%- include('./partials/nav.ejs') %>
         </nav>
     </header>
-    <h1>Pods in your area!</h1>
-    <div class="container-md index-main">
+    <h2>Pods in your area!</h2>
+    <div class="container-xl index-main">
     <% for(let pod of pods) { %>
-        <div class="pod-family">
-            <img class="pod-image" src="<%= pod.photoURL %>">
+        <div class="pod-family-container">
+            <a href="/<%= pod.id %>"><img class="index-pod-image" src="<%= pod.photoURL %>"></a>
             <h2><%= pod.familyName %></h2>
-            <h3><%= pod.familyCount %></h3> 
-            <p><%= pod.location %></p> 
+            <h3>Family of <%= pod.familyCount %></h3> 
+            <p>Location: <%= pod.location %></p> 
         </div> 
     <% } %> 
-
+    </div>
     <footer>
         <%- include ('./partials/footer.ejs') %>
     </footer>
