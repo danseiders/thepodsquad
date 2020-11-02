@@ -120,7 +120,16 @@ nav {
 }
 
 /******** SHOW PAGE ********/
+.show-body{
+    background-color: var(--darkblue);
+}
+.show-main-container{
+    display: flex;
+}
 
+.show-pod-image {
+   width: 50% 
+}
 
 
 

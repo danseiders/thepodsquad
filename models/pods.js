@@ -8,7 +8,7 @@ const familySchema = new mongoose.Schema ({
     maskwearing: {type: String, required: true},
     diningOut: {type: String, required: true},
     socialDistancing: {type: String, required: true},
-    riskScore: Number,
+    safetyScore: Number,
 
 })
 

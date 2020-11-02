@@ -9,9 +9,17 @@
         <%- include('./partials/nav.ejs') %>
     </nav>
 </header>
-<body>
-    <h1></h1>
-    
+<body class="show-body">
+    <div class="show-main-container">
+        <div class="show-pod-image">
+            <img src="<%= pod.photoURL %>">
+        </div>
+        <div>
+            <h2>The <%= pod.familyName %> Family</h2>
+            <p>The <%= pod.familyName %> family is a family of <%= pod.familyCount %> that lives in <%= pod.location %></p>
+            <p>Their safety score is <%= pod.safetyScore %> </p>
+        </div>
+    </div>
     <footer>
         <%- include ('./partials/footer.ejs') %>
     </footer>

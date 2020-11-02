@@ -4,6 +4,7 @@ const mongoose = require ('mongoose');
 const db = mongoose.connection;
 require('dotenv').config()
 const methodOverride  = require('method-override');
+const session = require('express-session')
 
 
 const PORT = process.env.PORT
@@ -21,6 +22,13 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(
+    session({
+        secret: process.env.SECRET,
+        resave: false,
+        saveUninitialized: false 
+    })
+)
 
 
 const podsController = require('./controllers/podsquad_controller.js')

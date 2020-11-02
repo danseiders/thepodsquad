@@ -11,6 +11,45 @@
         </nav>
     </header>
         <h1>Edit Page</h1>
+        <div class="container-xl new-pod-page">
+            <div class="container-md" >
+            <div class="form-container"> 
+                <form action="/" method="POST">
+                    <div class="form-group">
+                        <label name='familyName'>Family Name:</label>
+                        <input type="text" class="form-control" name="familyName" id="family-name" value="<%= pod.familyName %> ">
+                    </div>
+                    <div class="form-group">
+                        <label name='familyCount'>Household Members:</label>
+                        <input type="number" class="form-control" name="familyCount" id="familyCount" value="<%= pod.familyCount %>">
+                    </div>
+                    <div class="form-group">
+                        <label name='location'>State:</label>
+                        <input type="text" class="form-control" name="location" id="location" value="<%= pod.location %> ">
+                    </div>
+                    <div class="form-group">
+                        <label name='photoURL'>Photo URL:</label>
+                        <input type="text" class="form-control" name="photoURL" id="photoURL" value="<%= pod.photoURL %>" >
+                    </div>
+                    <div class="form-group">
+                        <label name="maskwearing">Mask wearing:</label>
+                        <input type="range" min="1" max="5" value="<%= pod.maskwearing %>" class="form-control" name="maskwearing" id="maskwearing">
+                    </div>
+                    <div class="form-group">
+                        <label name="diningOut">Dining Out:</label>
+                        <input type="range" min="1" max="5" value="<%= pod.diningOut %>" class="form-control" name="diningOut" id="diningOut">
+                    </div>
+                    <div class="form-group">
+                        <label name="socialDistancing">Social Distancing:</label>
+                        <input type="range" min="1" max="5" value="<%= pod.socialDistancing %>" class="form-control" name="socialDistancing" id="socialDistancing">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Add POD">
+                </form>
+            </div>
+        </div>
+                    <img class="image_with_form" src="<%= pod.photoURL %> ">
+            
+    </div>
     <footer>
         <%- include ('./partials/footer.ejs') %>
     </footer>
