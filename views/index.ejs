@@ -14,7 +14,7 @@
     <div class="container-xl index-main">
     <% for(let pod of pods) { %>
         <div class="pod-family-container">
-            <a href="/<%= pod.id %>"><img class="index-pod-image" src="<%= pod.photoURL %>"></a>
+            <a href="/pods/<%= pod.id %>"><img class="index-pod-image" src="<%= pod.photoURL %>"></a>
             <h2>The <%= pod.familyName %> Family</h2>
             <h3>Family of <%= pod.familyCount %></h3> 
             <p>Location: <%= pod.location %></p> 

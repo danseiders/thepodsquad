@@ -5,8 +5,6 @@ const Pod = require('../models/pods.js')
 
 //index 
 router.get('/', (req, res) => {
-    console.log(req.session)
-    console.log('hit index')
     Pod.find({}, (error, allPods) => {
         res.render('index.ejs', {
             pods: allPods,
@@ -25,7 +23,7 @@ router.get('/new', (req, res) => {
 //create
 router.post('/', (req, res) => {
     Pod.create(req.body, (error, createdPod) => {
-        req.session.podId = createdPod._id
+        req.session.podId = createdPod.id
         res.redirect('/')
     })
     
@@ -72,7 +70,7 @@ router.get('/seed', (req, res) => {
 
 
 // show
-router.get('/:id', (req, res) => {
+router.get('/pods/:id', (req, res) => {
     Pod.findById(req.params.id, (err, foundPod) => {
         res.render('show.ejs', {
             pod: foundPod,
@@ -84,29 +82,33 @@ router.get('/:id', (req, res) => {
 //delete
 router.delete('/:id', (req, res) => {
     Pod.findByIdAndDelete(req.params.id, () => {
-        res.redirect('/pods')
+        res.redirect('/')
     })
 })
 
 //edit
 router.get('/:id/edit', (req, res) => {
     Pod.findById(req.params.id, (err, foundPod) => {
-        res.render('edit.ejs', {
+        if(req.session.podId === 'undefined'){
+            console.log('no id in session')
+            res.redirect('index.ejs')
+        } else {
+            console.log('id in sesssion!')
+            res.render('edit.ejs', {
             pod: foundPod,
             userPodId: req.session.podId
-        })
+            })
+        }
     })
 })
 
 //put
 router.put('/:id', (req, res) => {
-    console.log(req.params.id)
-    console.log(req.body)
     Pod.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPod) => {
         if(err){
             console.log(err)
         }
-        res.redirect('/pods')
+        res.redirect('/')
     })
 })
 

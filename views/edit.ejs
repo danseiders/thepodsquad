@@ -7,14 +7,14 @@
     <header>
         <%- include('./partials/header.ejs') %>
         <nav>
-            <%- include('./partials/nav.ejs') %>
+            
         </nav>
     </header>
-        <h1>Edit Page</h1>
+        <h2>Edit your POD</h2>
         <div class="container-xl new-pod-page">
             <div class="container-md" >
             <div class="form-container"> 
-                <form action="/" method="POST">
+                <form action="/<%= pod.id %>?_method=PUT " method="POST">
                     <div class="form-group">
                         <label name='familyName'>Family Name:</label>
                         <input type="text" class="form-control" name="familyName" id="family-name" value="<%= pod.familyName %> ">
@@ -43,7 +43,10 @@
                         <label name="socialDistancing">Social Distancing:</label>
                         <input type="range" min="1" max="5" value="<%= pod.socialDistancing %>" class="form-control" name="socialDistancing" id="socialDistancing">
                     </div>
-                    <input type="submit" class="btn btn-primary" value="Add POD">
+                    <input type="submit" class="btn btn-primary" value="EDIT POD">
+                </form>
+                <form action="/<%= pod.id %>?_method=DELETE " method="POST">
+                    <input type="submit" class="btn btn-primary" value="DELETE POD">
                 </form>
             </div>
         </div>
