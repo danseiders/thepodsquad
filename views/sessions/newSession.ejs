@@ -3,7 +3,7 @@
 <head>
     <%- include('../partials/head.ejs') %>
 </head>
-<body class='intro-body'>
+<body class='new-session-body'>
     <header>
         <%- include('../partials/header.ejs') %>
     </header>
@@ -12,7 +12,7 @@
             <h4>Welcome to <span class="logo_md">PODSquad</span>!</h4>
             <p>Here at <span class="logo_sm">PODSquad</span> you can connect with local people or familes that follow similar COVID-19 protocols. <br><br> Log in or <a href='/newuser' id="signup_link">create a new account</a> to get started!</p>
             <div class="form-container"> 
-                <form action="" method="POST" >
+                <form action="/sessions" method="POST" >
                     <div class="form-group">
                         <label name="email">Email</label>
                         <input type="email" class="form-control" name="email" id="email">
@@ -21,7 +21,7 @@
                         <label name="password">Password</label>
                         <input type="password" class="form-control"name="password" id="password">
                     </div>
-                    <input type="submit" name="login" value="Log in with email" class="btn btn-primary">
+                    <input type="submit" value="Log in with email" class="btn btn-primary">
                 </form>
             </div>
         </div>

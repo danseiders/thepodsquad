@@ -161,7 +161,7 @@ footer {
 }
 
 /******** SESSION OR USER VIEW??? ********/
-.intro-body {
+.new-session-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

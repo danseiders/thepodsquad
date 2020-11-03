@@ -7,6 +7,7 @@ const Pod = require('../models/pods.js')
 router.get('/', (req, res) => {
     Pod.find({}, (error, allPods) => {
         res.render('index.ejs', {
+            currentUser: req.session.currentUser,
             pods: allPods,
             userPodId: req.session.podId
         })
@@ -16,6 +17,7 @@ router.get('/', (req, res) => {
 //new
 router.get('/new', (req, res) => {
     res.render('new.ejs', {
+        currentUser: req.session.currentUser,
         userPodId: req.session.podId
     })
 })
@@ -73,6 +75,7 @@ router.get('/seed', (req, res) => {
 router.get('/pods/:id', (req, res) => {
     Pod.findById(req.params.id, (err, foundPod) => {
         res.render('show.ejs', {
+            currentUser: req.session.currentUser,
             pod: foundPod,
             userPodId: req.session.podId
         })
@@ -90,8 +93,9 @@ router.delete('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
     Pod.findById(req.params.id, (err, foundPod) => {
             res.render('edit.ejs', {
-            pod: foundPod,
-            userPodId: req.session.podId
+                currentUser: req.session.currentUser,
+                pod: foundPod,
+                userPodId: req.session.podId
             })
     })
 }) 

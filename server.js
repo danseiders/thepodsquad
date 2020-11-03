@@ -30,12 +30,12 @@ app.use(
     })
 )
 
+const sessionsController = require('./controllers/sessions_controller.js')
+app.use('/sessions', sessionsController)
 const userController = require('./controllers/users_controller.js')
 app.use('/users', userController)
 const podsController = require('./controllers/podsquad_controller.js')
 app.use('/', podsController)
-const sessionsController = require('./controllers/sessions_controller.js')
-app.use('/sessions', sessionsController)
 
 
 
