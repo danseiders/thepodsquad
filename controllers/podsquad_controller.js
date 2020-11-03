@@ -89,18 +89,13 @@ router.delete('/:id', (req, res) => {
 //edit
 router.get('/:id/edit', (req, res) => {
     Pod.findById(req.params.id, (err, foundPod) => {
-        if(req.session.podId === 'undefined'){
-            console.log('no id in session')
-            res.redirect('index.ejs')
-        } else {
-            console.log('id in sesssion!')
             res.render('edit.ejs', {
             pod: foundPod,
             userPodId: req.session.podId
             })
-        }
     })
-})
+}) 
+
 
 //put
 router.put('/:id', (req, res) => {
