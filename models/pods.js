@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const familySchema = new mongoose.Schema ({
+    email: String,
     familyName: {type: String, required: true},
     familyCount: {type: Number, min: [1, 'Must be greater than 0']},
     location: {type: String, required: true},

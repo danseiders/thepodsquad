@@ -4,6 +4,7 @@ const Pod = require('../models/pods.js');
 const sessions = express.Router();
 const User = require('../models/users.js');
 
+
 sessions.get('/new', (req, res) => {
     res.render('sessions/newSession.ejs', { 
     currentUser: req.session.currentUser 
@@ -12,8 +13,9 @@ sessions.get('/new', (req, res) => {
 
 
 sessions.post('/', (req, res) => {
-    console.log('login post route hit')
     User.findOne({ email: req.body.email }, (err, foundUser) => {
+        Pod.find({email: req.body.email}, (err, foundUserPod) => {
+            console.log(foundUserPod)
     if (err) {
         console.log(err)
         res.send('There was an issue with the DB') //SEND AN ALERT INSTEAD?
@@ -22,11 +24,12 @@ sessions.post('/', (req, res) => {
     } else {
         if (bcrypt.compareSync(req.body.password, foundUser.password)) {
         req.session.currentUser = foundUser
-        res.redirect('/')
+                res.redirect('/')
     } else {
         res.send('<a href="/"> password does not match </a>')
     }
     }  
+})
 })
 })
 
