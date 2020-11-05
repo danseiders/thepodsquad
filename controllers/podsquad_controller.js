@@ -23,20 +23,20 @@ router.get('/', isAuthenticated, (req, res) => {
     })       
 })
 
-//local pods
-router.get('/nearby', isAuthenticated, (req, res) => {
-        console.log(req.session.currentUser)
-        Pod.find({email: req.session.currentUser.email}, (err, foundPod) => {
+// //local pods
+// router.get('/nearby', isAuthenticated, (req, res) => {
+//         console.log(req.session.currentUser)
+//         Pod.find({email: req.session.currentUser.email}, (err, foundPod) => {
             
-        })
-        // Pod.find({location: req.sesssion.currentUserPod.location}), (err, pods) => {
-        //     res.render('local.ejs', {
-        //         currentUser: req.session.currentUser,
-        //         pods: allPods,
-        //         userPodId: req.session.podId,
-            // })
-        // }
-})       
+//         })
+//         // Pod.find({location: req.sesssion.currentUserPod.location}), (err, pods) => {
+//         //     res.render('local.ejs', {
+//         //         currentUser: req.session.currentUser,
+//         //         pods: allPods,
+//         //         userPodId: req.session.podId,
+//             // })
+//         // }
+// })       
 
 //new
 router.get('/new',  isAuthenticated, (req, res) => {
