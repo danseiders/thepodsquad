@@ -4,12 +4,12 @@ const mongoose = require ('mongoose');
 const db = mongoose.connection;
 const session = require('express-session')
 const methodOverride  = require('method-override');
+require('dotenv').config()
 
 
 const PORT = process.env.PORT
 //DATABASE
 const MONGODB_URI = process.env.MONGODB_URI 
-require('dotenv').config()
 
 
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true} )

@@ -6,7 +6,7 @@
     --lightblue: #2361b1;
     --lightgreen: #BBE6E4;
     --white: rgba(240, 246, 246, 1);
-    --pink: #FF66B3;
+    --pink: #fc1f8d;
 }
 
 /******** WHOLE PAGE ********/
@@ -16,9 +16,9 @@ h2 {
 h4 {
     color: white;
     font-size: 30px;
-    background-color: var(--darkblue);
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    background-color: rgba(8, 76, 131, 0.89);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 p {
@@ -27,6 +27,13 @@ p {
 
 .page-title {
     text-align: center;
+}
+
+.form-group {
+    background-color: rgba(250, 28, 139, 0.658);
+    border-radius: 15px;
+    color: var(--white);
+    font-weight: bold;
 }
 
 a:hover{
@@ -69,6 +76,8 @@ nav {
     text-decoration: none;
     text-shadow: 5px 5px var(--darkblue);
 }
+
+.signup
 
 /******** INDEX PAGE ********/
 .index-body{
@@ -137,7 +146,7 @@ nav {
 /******** FOOTER ********/
 footer {
     text-align: center;
-    margin: 30px;
+   
     font-family: 'Comfortaa', cursive;
     background-color: var(--lightblue);
 }
@@ -161,7 +170,7 @@ footer {
     text-shadow: 2px 2px var(--pink);
 }
 
-/******** SESSION OR USER VIEW??? ********/
+/******** NEW SESSION ********/
 .new-session-body {
     display: flex;
     flex-direction: column;
@@ -174,6 +183,10 @@ footer {
     background-repeat: no-repeat;
     background-size: 100% ;
 }
+.new-session-container {
+    display: flex;
+    justify-content: center;
+}
 
 .login_intro {
     width: 350px;
@@ -184,15 +197,50 @@ footer {
     background-color: rgba(240, 246, 246, 0.678)
 }
 
+.intro_container {
+    display: flex;
+    justify-content: center;
+}
+
 .login_container {
     padding: 10px 20px;
 }
 
 #signup_link {
-    color: var(--pink)
+    color: var(--pink);
+    font-weight: bold;
+}
+#signup_link:hover {
+    text-decoration: underline;
 }
 
-.intro_container {
+
+/********** NEW USER **********/
+.new-user-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--darkblue);
+    background-image: url('/images/dad_with_children.jpg');
+    color: var(--white);
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+}
+
+.new-user-intro {
+    width: 350px;
+    height: auto;
+    border-radius: 15px;
+    color: darkblue;
+    text-align: center;
+    background-color: rgba(240, 246, 246, 0.678);
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.404);
+}
+
+.new-user-container {
     display: flex;
     justify-content: center;
 }
