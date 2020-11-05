@@ -12,7 +12,7 @@ sessions.get('/new', (req, res) => {
 
 
 sessions.post('/', (req, res) => {
-    console.log('post route hit')
+    console.log('login post route hit')
     User.findOne({ email: req.body.email }, (err, foundUser) => {
     if (err) {
         console.log(err)

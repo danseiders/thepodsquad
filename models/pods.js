@@ -9,6 +9,7 @@ const familySchema = new mongoose.Schema ({
     diningOut: {type: String, required: true},
     socialDistancing: {type: String, required: true},
     safetyScore: Number,
+    userId: String
 
 })
 

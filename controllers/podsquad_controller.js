@@ -1,16 +1,19 @@
 const express = require('express')
 const router = express.Router()
 const Pod = require('../models/pods.js')
+const User = require('../models/users.js')
 
 
 //index 
 router.get('/', (req, res) => {
+    // const userLocation = req.session.currentUser.location
     Pod.find({}, (error, allPods) => {
         res.render('index.ejs', {
             currentUser: req.session.currentUser,
             pods: allPods,
-            userPodId: req.session.podId
+            userPodId: req.session.podId,
         })
+        console.log(req.session)
     })       
 })
 
@@ -19,16 +22,18 @@ router.get('/new', (req, res) => {
     res.render('new.ejs', {
         currentUser: req.session.currentUser,
         userPodId: req.session.podId
+
     })
 })
 
 //create
 router.post('/', (req, res) => {
+    req.body.userId = req.session.currentUser._id
     Pod.create(req.body, (error, createdPod) => {
-        req.session.podId = createdPod.id
+        req.session.currentUser.podId = createdPod.id
         res.redirect('/')
     })
-    
+        
     
 })
 
@@ -74,6 +79,7 @@ router.get('/seed', (req, res) => {
 // show
 router.get('/pods/:id', (req, res) => {
     Pod.findById(req.params.id, (err, foundPod) => {
+        console.log(foundPod)
         res.render('show.ejs', {
             currentUser: req.session.currentUser,
             pod: foundPod,
