@@ -77,13 +77,14 @@ nav {
     text-shadow: 5px 5px var(--darkblue);
 }
 
-.signup
+
 
 /******** INDEX PAGE ********/
-.index-body{
+.index-body {
     background-color: var(--darkblue);
     text-align: center;
 }
+
 .index-main{
     display: flex;
     flex-flow: row wrap;
@@ -114,7 +115,7 @@ nav {
     height: 800px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% ;
+    background-size: 100%;
 }
 .new-pod-page {
     display: flex;
@@ -129,24 +130,35 @@ nav {
 }
 
 /******** SHOW PAGE ********/
-.show-body{
+.show-body {
     background-color: var(--darkblue);
+    color: white;
 }
+
 .show-main-container{
     display: flex;
 }
+.show-detail-div {
+    display: flex;
+    flex-direction: column;
 
-.show-pod-image {
-   width: 500px;
-   height: auto;
 }
 
+.show-pod-image {
+    width: 500px;
+    height: auto;
+}
+
+/******** EDIT PAGE *******/
+.edit-body {
+    background-color: var(--darkblue);
+    text-align: center;
+}
 
 
 /******** FOOTER ********/
 footer {
     text-align: center;
-   
     font-family: 'Comfortaa', cursive;
     background-color: var(--lightblue);
 }

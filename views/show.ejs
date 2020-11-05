@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <%- include('./partials/head.ejs') %>
+    <%- include('./partials/head.ejs') %>
 </head>
 <header>
     <%- include('./partials/header.ejs') %>
@@ -14,14 +14,16 @@
         <div>
             <img class="show-pod-image" src="<%=pod.photoURL%>">
         </div>
-        <div>
-            <h2>The <%= pod.familyName %> Family</h2>
-            <p>The <%= pod.familyName %> family is a family of <%= pod.familyCount %> that lives in <%= pod.location %></p>
-            <p>Their safety score is <%= pod.safetyScore %> </p>
-        </div>
-        <form action="/<%= pod.id %>/edit ">
+        <div class="show-detail-div">
+            <div>
+                <h2>The <%= pod.familyName %> Family</h2>
+                <p>The <%= pod.familyName %> family is a family of <%= pod.familyCount %> that lives in <%= pod.location %></p>
+                <p>Their safety score is <%= pod.safetyScore %> </p>
+            </div>
+            <form action="/<%= pod.id %>/edit ">
             <input type="submit" value="Edit your POD">
-        </form>
+            </form>
+        </div>
     </div>
     <footer>
         <%- include ('./partials/footer.ejs') %>
