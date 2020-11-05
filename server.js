@@ -3,13 +3,13 @@ const app = express();
 const mongoose = require ('mongoose');
 const db = mongoose.connection;
 const session = require('express-session')
-require('dotenv').config()
 const methodOverride  = require('method-override');
 
 
 const PORT = process.env.PORT
 //DATABASE
 const MONGODB_URI = process.env.MONGODB_URI 
+require('dotenv').config()
 
 
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true} )
@@ -25,7 +25,7 @@ app.use(express.json())
 app.use(methodOverride('_method'))
 app.use(
     session({
-        secret: 'secret',
+        secret: process.env.SECRET,
         resave: false,
         saveUninitialized: false 
     })
