@@ -3,16 +3,16 @@ const router = express.Router()
 const Pod = require('../models/pods.js')
 const User = require('../models/users.js')
 
-// const isAuthenticated = (req, res, next) => {
-//     if (req.session.currentUser) {
-//         return next()
-//     } else {
-//         res.redirect('/sessions/new')
-//     }
-//     }
+const isAuthenticated = (req, res, next) => {
+    if (req.session.currentUser) {
+        return next()
+    } else {
+        res.redirect('/sessions/new')
+    }
+    }
 
 //index 
-router.get('/', (req, res) => {
+router.get('/', isAuthenticated, (req, res) => {
     Pod.find({}, (error, allPods) => {
         res.render('index.ejs', {
             currentUser: req.session.currentUser,
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 })
 
 //local pods
-router.get('/nearby', (req, res) => {
+router.get('/nearby', isAuthenticated, (req, res) => {
         console.log(req.session.currentUser)
         Pod.find({email: req.session.currentUser.email}, (err, foundPod) => {
             
@@ -39,7 +39,7 @@ router.get('/nearby', (req, res) => {
 })       
 
 //new
-router.get('/new',   (req, res) => {
+router.get('/new',  isAuthenticated, (req, res) => {
     res.render('new.ejs', {
         currentUser: req.session.currentUser,
         userPodId: req.session.currentUser.podId

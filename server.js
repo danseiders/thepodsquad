@@ -2,14 +2,21 @@ const express = require('express');
 const app = express();
 const mongoose = require ('mongoose');
 const db = mongoose.connection;
+const session = require('express-session')
 require('dotenv').config()
 const methodOverride  = require('method-override');
-const session = require('express-session')
 
 
 const PORT = process.env.PORT
 //DATABASE
 const MONGODB_URI = process.env.MONGODB_URI 
+app.use(
+    session({
+        secret: process.env.SECRET,
+        resave: false,
+        saveUninitialized: false 
+    })
+)
 
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false} );
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -22,13 +29,6 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(
-    session({
-        secret: process.env.SECRET,
-        resave: false,
-        saveUninitialized: false 
-    })
-)
 
 const sessionsController = require('./controllers/sessions_controller.js')
 app.use('/sessions', sessionsController)
