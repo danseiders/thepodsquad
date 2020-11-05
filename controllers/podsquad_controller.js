@@ -35,20 +35,18 @@ router.get('/', isAuthenticated, (req, res) => {
     })       
 })
 
-// //local pods
-// router.get('/nearby', isAuthenticated, (req, res) => {
-//         console.log(req.session.currentUser)
-//         Pod.find({email: req.session.currentUser.email}, (err, foundPod) => {
-            
-//         })
-//         // Pod.find({location: req.sesssion.currentUserPod.location}), (err, pods) => {
-//         //     res.render('local.ejs', {
-//         //         currentUser: req.session.currentUser,
-//         //         pods: allPods,
-//         //         userPodId: req.session.podId,
-//             // })
-//         // }
-// })       
+//local pods
+router.get('/nearby', isAuthenticated, (req, res) => {
+        console.log('hit nearby route')
+        const userLocation = req.session.userPod[0].location
+        Pod.find({location: userLocation}, (err, pods) => {
+            res.render('local.ejs', {
+                currentUser: req.session.currentUser,
+                pods: pods,
+                userPodId: req.session.podId,
+            })
+        })
+})       
 
 //new
 router.get('/new',  isAuthenticated, (req, res) => {
@@ -161,6 +159,7 @@ router.put('/:id', (req, res) => {
         if(err){
             console.log(err)
         }
+        req.session.userPod = [req.body]
         res.redirect('/')
     })
 })
