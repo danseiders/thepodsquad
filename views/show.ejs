@@ -19,6 +19,9 @@
             <p>The <%= pod.familyName %> family is a family of <%= pod.familyCount %> that lives in <%= pod.location %></p>
             <p>Their safety score is <%= pod.safetyScore %> </p>
         </div>
+        <form action="/<%= pod.id %>/edit ">
+            <input type="submit" value="Edit your POD">
+        </form>
     </div>
     <footer>
         <%- include ('./partials/footer.ejs') %>

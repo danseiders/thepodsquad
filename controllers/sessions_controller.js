@@ -17,7 +17,8 @@ sessions.get('/new', (req, res) => {
 sessions.post('/', (req, res) => {
     User.findOne({ email: req.body.email }, (err, foundUser) => {
         Pod.find({email: req.body.email}, (err, foundUserPod) => {
-            console.log(foundUserPod)
+            console.log(foundUserPod, "this is the user pod")
+            req.session.userPod = foundUserPod
     if (err) {
         console.log(err)
         res.send('There was an issue with the DB') //SEND AN ALERT INSTEAD?
@@ -30,6 +31,7 @@ sessions.post('/', (req, res) => {
     } else {
         res.send('<a href="/"> password does not match </a>')
     }
+    console.log(foundUserPod, "this is the user pod AFTER")
     }  
 })
 })

@@ -8,8 +8,20 @@ const isAuthenticated = (req, res, next) => {
         return next()
     } else {
         res.redirect('/sessions/new')
+    } 
+}
+
+const userHasPod = (req, res, next) => {
+    console.log(req.session.userPod.length, 'this is lenght')
+    if (req.session.userPod.length === 0){
+        console.log('user doesnt have a pod!')
+        res.redirect('/new')
+    } else {
+        console.log(req.session.userPod[0].familyName)
+        console.log('user has a pod!')
+        return next()
     }
-    }
+}
 
 //index 
 router.get('/', isAuthenticated, (req, res) => {
@@ -53,6 +65,7 @@ router.post('/', (req, res) => {
     req.body.email = req.session.currentUser.email
     Pod.create(req.body, (error, createdPod) => {
         req.session.currentUser.podId = createdPod.id
+        req.session.userPod = [createdPod]
         res.redirect('/')
     })
         
@@ -111,7 +124,7 @@ router.get('/pods/:id', (req, res) => {
 })  
 
 //user show with edit
-router.get('/user', (req, res) => {
+router.get('/user', userHasPod, (req, res) => {
     console.log('user route')
     Pod.find({email: req.session.currentUser.email}, (err, foundPod) => {
         res.render('show.ejs', {
@@ -125,18 +138,19 @@ router.get('/user', (req, res) => {
 //delete
 router.delete('/:id', (req, res) => {
     Pod.findByIdAndDelete(req.params.id, () => {
+        req.session.userPod = [],
         res.redirect('/')
     })
 })
 
 //edit
-router.get('/:id/edit', (req, res) => {
-    Pod.findById(req.params.id, (err, foundPod) => {
-            res.render('edit.ejs', {
-                currentUser: req.session.currentUser,
-                pod: foundPod,
-                userPodId: req.session.currentUser.podId
-            })
+router.get('/:id/edit', userHasPod, (req, res) => {
+    Pod.find({email: req.session.currentUser.email}, (err, foundPod) => {
+        res.render('edit.ejs', {
+            currentUser: req.session.currentUser,
+            pod: foundPod[0],
+            userPodId: req.session.podId
+        })
     })
 }) 
 
