@@ -13,12 +13,14 @@
     <h2>Pods in your area!</h2>
     <div class="container-xl index-main">
         <% for(let pod of pods) { %>
+            <a href="/pods/<%= pod.id %>">
             <div class="pod-family-container">
-                <a href="/pods/<%= pod.id %>"><img class="index-pod-image" src="<%= pod.photoURL %>"></a>
+                <img class="index-pod-image" src="<%= pod.photoURL %>">
                 <h2>The <%= pod.familyName %> Family</h2>
                 <h3>Family of <%= pod.familyCount %></h3> 
                 <p>Location: <%= pod.location %></p> 
             </div> 
+            </a>
         <% } %> 
         </div>
     <footer>

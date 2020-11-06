@@ -200,6 +200,11 @@ footer {
     color: white;
 }
 
+.copyright {
+    font-size: 10px;
+    
+}
+
 /******** LOGO STYLES ********/
 .logo_sm {
     padding: 5px;

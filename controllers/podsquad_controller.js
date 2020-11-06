@@ -62,7 +62,6 @@ router.get('/new',  isAuthenticated, (req, res) => {
 router.post('/', (req, res) => {
     req.body.userId = req.session.currentUser._id
     req.body.email = req.session.currentUser.email
-    console.log(req.body.safetyScore)
     Pod.create(req.body, (error, createdPod) => {
         req.session.currentUser.podId = createdPod.id
         req.session.userPod = [createdPod]
