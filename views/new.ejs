@@ -4,7 +4,7 @@
    <%- include('./partials/head.ejs') %>
 </head>
 <body class="new-body">
-    <header>
+    <header class="show-header">
         <%- include('./partials/header.ejs') %>
         <nav>
             <%- include('./partials/nav.ejs') %>
@@ -16,15 +16,15 @@
         <div class="form-container"> 
             <form action="/" method="POST">
                 <div class="form-group">
-                    <label name='familyName'>Last Name:</label>
+                    <label name='familyName'>Last Name</label>
                     <input type="text" class="form-control" name="familyName" id="family-name">
                 </div>
                 <div class="form-group">
-                    <label name='familyCount'>Household Members:</label>
+                    <label name='familyCount'>Household Members</label>
                     <input type="number" class="form-control" name="familyCount" id="familyCount">
                 </div>
                 <div class="form-group">
-                    <label name="location">State:</label>
+                    <label name="location">State</label>
                     <select name="location" class="form-control" id="location">
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -80,15 +80,15 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label name='photoURL'>Photo URL:</label>
+                    <label name='photoURL'>Photo URL</label>
                     <input type="text" class="form-control" name="photoURL" id="photoURL">
                 </div>
                 <div class="form-group">
-                    <label name="maskwearing">Mask wearing:</label>
+                    <label name="maskwearing">Mask wearing</label>
                     <input type="range" min="1" max="5" value="3" class="form-control" name="maskwearing" id="maskwearing">
                 </div>
                 <div class="form-group">
-                    <label name="diningOut">Dining Out:</label>
+                    <label name="diningOut">Dining Out</label>
                     <input type="range" min="1" max="5" value="3" class="form-control" name="diningOut" id="diningOut">
                 </div>
                 <div class="form-group">

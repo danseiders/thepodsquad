@@ -4,7 +4,7 @@
     </div>
     <div class="login_container">
         <% if (currentUser) { %>
-            <h3>Welcome! <%= currentUser.email %> </h3>
+            <h5>Welcome! <%= currentUser.email %> </h5>
             <form action="/sessions?_method=DELETE" method="POST">
                 <input type="submit" value="LOG OUT" class="btn btn-primary">
             </form>

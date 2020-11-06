@@ -3,7 +3,7 @@
 <head>
     <%- include('./partials/head.ejs') %>
 </head>
-<header>
+<header class='show-header'>
     <%- include('./partials/header.ejs') %>
     <nav>
         <%- include('./partials/nav.ejs') %>
@@ -16,12 +16,12 @@
         </div>
         <div class="show-detail-div">
             <div>
-                <h2>The <%= pod.familyName %> Family</h2>
-                <p>The <%= pod.familyName %> family is a family of <%= pod.familyCount %> that lives in <%= pod.location %></p>
-                <p>Their safety score is <%= pod.safetyScore %> </p>
+                <h2 class="family-name show-text">The <%= pod.familyName %> Family</h2>
+                <p class="show-text">The <%= pod.familyName %> family is a family of <%= pod.familyCount %> that lives in <%= pod.location %></p>
+                <p class="show-text">Their safety score is <%= pod.maskwearing %> </p>
             </div>
             <form action="/<%= pod.id %>/edit ">
-            <input type="submit" value="Edit your POD">
+            <input type="submit" class="btn btn-primary show-edit-btn" value="Edit your POD">
             </form>
         </div>
     </div>

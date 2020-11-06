@@ -23,6 +23,7 @@ const userHasPod = (req, res, next) => {
     }
 }
 
+
 //index 
 router.get('/', isAuthenticated, (req, res) => {
     Pod.find({}, (error, allPods) => {
@@ -61,6 +62,7 @@ router.get('/new',  isAuthenticated, (req, res) => {
 router.post('/', (req, res) => {
     req.body.userId = req.session.currentUser._id
     req.body.email = req.session.currentUser.email
+    console.log(req.body.safetyScore)
     Pod.create(req.body, (error, createdPod) => {
         req.session.currentUser.podId = createdPod.id
         req.session.userPod = [createdPod]
@@ -116,7 +118,9 @@ router.get('/pods/:id', (req, res) => {
         res.render('show.ejs', {
             currentUser: req.session.currentUser,
             pod: foundPod,
-            userPodId: req.session.podId
+            userPodId: req.session.podId,
+            
+            
         })
     })
 })  

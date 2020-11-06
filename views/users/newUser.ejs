@@ -10,17 +10,15 @@
     
     <div class="container-md new-user-container">
         <div class="new-user-intro form-container"> 
-            <h4>Create a New Account</h4>
+        <h4>Sign Up</h4>
             <form action="/users" method="POST">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" id="email"/>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" id="password"/>
-                </div>
-                <input type="submit" class="btn btn-primary" value="Submit">
+                    <div class="col-md-auto new-email">
+                    <input type="text" class="form-control" name="email" placeholder="Email" id="email"/>
+                    </div>
+                    <div class="col-md-auto new-password">
+                    <input type="password" class="form-control" name="password" placeholder="Password"id="password"/>
+                    </div>
+                <input type="submit" class="btn btn-primary" value="Join PODSquad">
             </form>
         </div>
     </div>

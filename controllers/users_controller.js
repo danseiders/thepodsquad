@@ -16,6 +16,8 @@ users.post('/', (req, res) => {
     User.create(req.body, (err, createdUser) => {
         if(err){
             console.log(err)
+            emailUsed()
+            res.redirect('/users/new')
         } else {
     console.log('user is created', createdUser)
     res.redirect('/')
