@@ -320,9 +320,7 @@ footer {
     .new-session-header {
         background-color: rgb(192, 201, 229);
     }
-    .new-session-body {
-        background-image: none;
-    }
+    
     .image_with_form {
         display: none;
     }
@@ -345,4 +343,11 @@ footer {
         margin: 25px;
     }
     
+}
+
+@media (max-width: 650px){
+    .new-session-body {
+        background-image: none;
+    }
+
 }
