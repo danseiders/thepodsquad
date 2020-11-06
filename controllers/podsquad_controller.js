@@ -37,7 +37,7 @@ router.get('/', isAuthenticated, (req, res) => {
 })
 
 //local pods
-router.get('/nearby', isAuthenticated, (req, res) => {
+router.get('/nearby', isAuthenticated, userHasPod, (req, res) => {
         console.log('hit nearby route')
         const userLocation = req.session.userPod[0].location
         Pod.find({location: userLocation}, (err, pods) => {

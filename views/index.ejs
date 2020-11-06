@@ -10,8 +10,8 @@
             <%- include('./partials/nav.ejs') %>
         </nav>
     </header>
-    <h2>THE PODSquad!!!</h2>
-    <div class="container-xl index-main">
+    
+    <div class="container-sm index-main">
     <% for(let pod of pods) { %>
         <div class="pod-family-container">
             <a href="/pods/<%= pod.id %>"><img class="index-pod-image" src="<%= pod.photoURL %>"></a>

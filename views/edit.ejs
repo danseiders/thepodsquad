@@ -4,7 +4,7 @@
     <%- include('./partials/head.ejs') %>
 </head>
 <body class="edit-body">
-    <header>
+    <header class="show-header">
         <%- include('./partials/header.ejs') %>
         <nav>
             
@@ -97,8 +97,8 @@
                     </div>
                     <input type="submit" class="btn btn-primary" value="CONFIRM EDIT">
                 </form>
-                <form action="/<%= pod.id %>?_method=DELETE " method="POST">
-                    <input type="submit" class="btn btn-primary" value="DELETE POD">
+                <form action="/<%= pod.id %>?_method=DELETE " method="POST"  >
+                    <input type="submit" class="btn btn-primary delete-btn" value="DELETE POD">
                 </form>
             </div>
         </div>
